@@ -12,3 +12,14 @@ Este projeto é uma API REST desenvolvida com **Spring Boot** que permite o gere
 - ✅ Associação de ônibus e motoristas às rotas
 - ✅ Listagem de rotas com informações detalhadas
 - ✅ Filtragem de rotas por horário ou destino
+
+## 🛠️ Tecnologias Utilizadas
+
+- Java 21
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Banco de dados H2
+- PostgreSQL
+- Lombok
+- Maven
