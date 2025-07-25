@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_onibus")
-public class Ônibus {
+public class Onibus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,15 +25,15 @@ public class Ônibus {
         this.statusOnibus = statusOnibus;
     }
 
-    public Ônibus(StatusOnibus statusOnibus) {
+    public Onibus(StatusOnibus statusOnibus) {
         this.statusOnibus = statusOnibus;
     }
 
-    public Ônibus() {
+    public Onibus() {
 
     }
 
-    public Ônibus(Long id, String placa, String modelo, String marca, Integer anoFabricacao, Integer capacidade) {
+    public Onibus(Long id, String placa, String modelo, String marca, Integer anoFabricacao, Integer capacidade) {
         this.id = id;
         this.placa = placa;
         this.modelo = modelo;
