@@ -2,25 +2,27 @@ package com.bus.route.persistence.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
-@Table(name = "tb_route")
-public class Route {
+@Table(name = "tb_routes", schema = "public")
+public class RouteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String origin;
     private String destiny;
-    private String leavingTime;
-    private String arrivalTime;
+    private LocalDateTime leavingTime;
+    private LocalDateTime arrivalTime;
     private String frequency;
     private Double distanceKm;
 
-    public Route() {
+    public RouteEntity() {
 
     }
 
-    public Route(Integer id, String origin, String destiny, String leavingTime, String arrivalTime, String frequency, Double distanceKm) {
+    public RouteEntity(Long id, String origin, String destiny, LocalDateTime leavingTime, LocalDateTime arrivalTime, String frequency, Double distanceKm) {
         this.id = id;
         this.origin = origin;
         this.destiny = destiny;
@@ -30,11 +32,11 @@ public class Route {
         this.distanceKm = distanceKm;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -54,19 +56,19 @@ public class Route {
         this.destiny = destiny;
     }
 
-    public String getLeavingTime() {
+    public LocalDateTime getLeavingTime() {
         return leavingTime;
     }
 
-    public void setLeavingTime(String leavingTime) {
+    public void setLeavingTime(LocalDateTime leavingTime) {
         this.leavingTime = leavingTime;
     }
 
-    public String getArrivalTime() {
+    public LocalDateTime getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(String arrivalTime) {
+    public void setArrivalTime(LocalDateTime arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
@@ -83,7 +85,6 @@ public class Route {
     }
 
     public void setDistanceKm(Double distanceKm) {
-        this.distanceKm = this.distanceKm;
+        this.distanceKm = distanceKm;
     }
 }
-

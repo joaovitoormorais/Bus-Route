@@ -4,8 +4,8 @@ import com.bus.route.enums.StatusBus;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_bus")
-public class Bus {
+@Table(name = "tb_bus", schema = "public")
+public class BusEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +15,7 @@ public class Bus {
     private String brand;
     private Integer fabricationYear;
     private Integer capacity;
+    private Integer status;
     private StatusBus statusBus;
 
     public StatusBus getStatusBus() {
@@ -25,21 +26,22 @@ public class Bus {
         this.statusBus = statusBus;
     }
 
-    public Bus(StatusBus statusBus) {
+    public BusEntity(StatusBus statusBus) {
         this.statusBus = statusBus;
     }
 
-    public Bus() {
+    public BusEntity() {
 
     }
 
-    public Bus(Long id, String plate, String model, String brand, Integer fabricationYear, Integer capacity) {
+    public BusEntity(Long id, String plate, String model, String brand, Integer fabricationYear, Integer capacity, Integer status) {
         this.id = id;
         this.plate = plate;
         this.model = model;
         this.brand = brand;
         this.fabricationYear = fabricationYear;
         this.capacity = capacity;
+        this.status = status;
     }
 
     public Long getId() {
@@ -90,4 +92,11 @@ public class Bus {
         this.capacity = capacity;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 }

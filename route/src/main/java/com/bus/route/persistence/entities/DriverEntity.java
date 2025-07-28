@@ -1,44 +1,58 @@
 package com.bus.route.persistence.entities;
 
+import com.bus.route.enums.StatusDriver;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tb_driver")
-public class Driver {
+@Table(name = "tb_drivers", schema = "public")
+public class DriverEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String name;
     private String cpf;
     private String cnh;
-    private String categoryCnh;
-    private LocalDateTime dateofBirth;
+    private String cnhCategory;
+    private LocalDateTime yearofBirth;
     private String phoneNumber;
     private String status;
+    private StatusDriver statusDriver;
 
-    public Driver() {
+    public StatusDriver getStatusDriver() {
+        return statusDriver;
+    }
+
+    public void setStatusDriver(StatusDriver statusDriver) {
+        this.statusDriver = statusDriver;
+    }
+
+    public DriverEntity(StatusDriver statusDriver) {
+        this.statusDriver = statusDriver;
+    }
+
+    public DriverEntity() {
 
     }
 
-    public Driver(long id, String name, String cpf, String cnh, String categoryCnh, LocalDateTime dateofBirth, String phoneNumber, String status) {
+    public DriverEntity(Long id, String name, String cpf, String cnh, String cnhCategory, LocalDateTime yearofBirth, String phoneNumber, String status) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.cnh = cnh;
-        this.categoryCnh = categoryCnh;
-        this.dateofBirth= dateofBirth;
+        this.cnhCategory = cnhCategory;
+        this.yearofBirth = yearofBirth;
         this.phoneNumber = phoneNumber;
         this.status = status;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -66,20 +80,20 @@ public class Driver {
         this.cnh = cnh;
     }
 
-    public String getCategoryCnh() {
-        return categoryCnh;
+    public String getCnhCategory() {
+        return cnhCategory;
     }
 
-    public void setCategoryCnh(String categoryCnh) {
-        this.categoryCnh = categoryCnh;
+    public void setCnhCategory(String cnhCategory) {
+        this.cnhCategory = cnhCategory;
     }
 
-    public LocalDateTime getDateofBirth() {
-        return dateofBirth;
+    public LocalDateTime getYearofBirth() {
+        return yearofBirth;
     }
 
-    public void setDateofBirth(LocalDateTime dateofBirth) {
-        this.dateofBirth = dateofBirth;
+    public void setYearofBirth(LocalDateTime yearofBirth) {
+        this.yearofBirth = yearofBirth;
     }
 
     public String getPhoneNumber() {
